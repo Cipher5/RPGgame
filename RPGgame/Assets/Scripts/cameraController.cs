@@ -8,7 +8,7 @@ public class cameraController : MonoBehaviour {
 	float desiredDistance = 4f;
 
 	float pitch = 0f;
-	float pitchMin = -40f;
+	float pitchMin = -10f;
 	float pitchMax = 60f;
 	float yaw= 0f;
 	float roll = 0f;
@@ -24,6 +24,6 @@ public class cameraController : MonoBehaviour {
 
 		transform.localEulerAngles = new Vector3 (pitch, yaw, roll);
 
-		transform.position = target.transform.position - desiredDistance * transform.forward + Vector3.up * 3.5f;
+		transform.position = target.transform.position - desiredDistance * transform.forward + Vector3.up * 1f;
 	}
 }

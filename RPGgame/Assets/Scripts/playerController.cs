@@ -6,6 +6,7 @@ public class playerController : MonoBehaviour {
 
 	CharacterController cc;
 	Animator anim;
+	Camera cam;
 	public float moveSpeed = 4f;
 	string state = "Movement";
 	float gravity = 0f;
@@ -16,6 +17,7 @@ public class playerController : MonoBehaviour {
 	void Start () {
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator> ();
+		cam = Camera.main;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +38,9 @@ public class playerController : MonoBehaviour {
 		float z = Input.GetAxisRaw ("Vertical");
 
 		Vector3 direction = new Vector3 (x, 0, z).normalized;
+		float cameraDirection = cam.transform.localEulerAngles.y;
+		direction = Quaternion.AngleAxis (cameraDirection, Vector3.up) * direction;
+
 		Vector3 velocity = direction * moveSpeed * Time.deltaTime;
 
 		if (cc.isGrounded) {
