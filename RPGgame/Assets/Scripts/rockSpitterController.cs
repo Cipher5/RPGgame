@@ -10,6 +10,8 @@ public class rockSpitterController : MonoBehaviour {
 	Vector3 anchor;
 	string state;
 	Animator anim;
+	public GameObject rock;
+	public Transform shootOrigin;
 
 	// Use this for initialization
 	void Start () {
@@ -40,9 +42,9 @@ public class rockSpitterController : MonoBehaviour {
 			target = anchor;
 			nav.stoppingDistance = 0;
 		} else {
-//			if (Random.Range(0,100f) < 100f) {
+			if (Random.Range(0,100f) < 2f) {
 				ChangeState ("Shoot");
-//			}
+			}
 		}
 		nav.SetDestination (target);
 
@@ -57,4 +59,6 @@ public class rockSpitterController : MonoBehaviour {
 	{
 		ChangeState ("Movement");
 	}
+
+	void ShootRock ();
 }
