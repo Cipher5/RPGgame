@@ -60,5 +60,10 @@ public class rockSpitterController : MonoBehaviour {
 		ChangeState ("Movement");
 	}
 
-	void ShootRock ();
+	void ShootRock () {
+		GameObject r = Instantiate (rock, shootOrigin.position, Quaternion.identity);
+
+		Rigidbody rockBody = r.GetComponent<Rigidbody> ();
+		rockBody.AddForce (transform.forward * 500f);
+	}
 }
