@@ -6,39 +6,36 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
 
 	public Slider healthbar;
-	public float maxHealth = 10f;
+	public float maxHealth;
 	float currentHealth;
-	Animator anim;
-	string state = "Movement"; //1
 	Health health;
 
 	void Start () {
 		currentHealth = maxHealth;
-		Animator anim = this.GetComponent<Animator> ();
+
 		health = this.GetComponent<Health> ();
+		maxHealth = 10f;
 	}
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.H)) {
-			health.TakeDamage (0);
+			health.TakeDamage (1);
 		}
 	}
 	public void TakeDamage(float amount) {
 		currentHealth -= amount;
 
 		healthbar.value = currentHealth / maxHealth;
+		Animator anim = this.GetComponent<Animator> ();
 		if (anim) {
-			ChangeState ("Hurt");
+			//playerController.ChangeState ("Hurt");
+			anim.SetTrigger ("Hurt");
 		}
 
 	}
-	void ChangeState(string stateName){
-		state = stateName;
-		anim.SetTrigger (stateName);
 
-	}
 	void ReturnToMovement() {
-		ChangeState ("Movement");
+		 //("Movement");
 	}
 
 }
