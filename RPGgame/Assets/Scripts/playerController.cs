@@ -12,11 +12,13 @@ public class playerController : MonoBehaviour {
 	float gravity = 0f;
 	float jumpVelocity = 0;
 	public float jumpHeight = 16f;
+	Health health;
 
 	// Use this for initialization
 	void Start () {
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator> ();
+		health = GetComponent<Health> ();
 		cam = Camera.main;
 	}
 	
