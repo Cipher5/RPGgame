@@ -19,7 +19,7 @@ public class Health : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.H)) {
-			health.TakeDamage (1);
+			health.TakeDamage (1f);
 		}
 	}
 	public void TakeDamage(float amount) {
@@ -28,8 +28,11 @@ public class Health : MonoBehaviour {
 		healthbar.value = currentHealth / maxHealth;
 		Animator anim = this.GetComponent<Animator> ();
 		if (anim) {
-			//playerController.ChangeState ("Hurt");
-			anim.SetTrigger ("Hurt");
+			playerController pc;
+			pc = this.GetComponent<playerController>();
+			if (pc) {
+				pc.ChangeState ("Hurt");
+			}
 		}
 
 	}
@@ -37,5 +40,7 @@ public class Health : MonoBehaviour {
 	void ReturnToMovement() {
 		 //("Movement");
 	}
+
+
 
 }

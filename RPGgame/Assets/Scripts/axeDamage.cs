@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectileController : MonoBehaviour {
+public class axeDamage : MonoBehaviour {
 
-    void Start()
-    {
-        Destroy(gameObject, 5f);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+	void OnCollisionEnter(Collision collision)
+	{
 		GameObject other = collision.gameObject;
 		Health otherHealth = other.GetComponent<Health> ();
 
-//        Destroy(gameObject);
+		//        Destroy(gameObject);
 		if (otherHealth) {
 			otherHealth.TakeDamage (2f);
-			Destroy (gameObject);
 		}
-    }
+	}
 }

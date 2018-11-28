@@ -12,13 +12,13 @@ public class playerController : MonoBehaviour {
 	float gravity = 0f;
 	float jumpVelocity = 0;
 	public float jumpHeight = 16f;
-	Health health;
+	Health myHealth;
 
 	// Use this for initialization
 	void Start () {
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator> ();
-		health = GetComponent<Health> ();
+		myHealth = GetComponent<Health> ();
 		cam = Camera.main;
 	}
 	
@@ -55,7 +55,7 @@ public class playerController : MonoBehaviour {
 			gravity = Mathf.Clamp (gravity, 1f, 20f);
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space) && cc.isGrounded) {
+		if (Input.GetKeyDown (KeyCode.Space) && cc.isGrounded && state !="Hurt") {
 			jumpVelocity = jumpHeight;
 			ChangeState ("Jump");
 
@@ -78,7 +78,7 @@ public class playerController : MonoBehaviour {
 		if (jumpVelocity < 0) { return; }
 		jumpVelocity -= 1.25f;
 	}
-	void ChangeState(string stateName){
+	public void ChangeState(string stateName){
 		state = stateName;
 		anim.SetTrigger (stateName);
 
@@ -93,6 +93,12 @@ public class playerController : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonDown (0)) {
 			ChangeState ("Swing");
+		}
+	}
+	void onCollisionEnter(Collider other) {
+		Debug.Log (other.gameObject.tag);
+		if (other.gameObject.tag == "hazardWeapon") {
+			myHealth.TakeDamage (2f);
 		}
 	}
 }
