@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
 	Camera cam;
 	public GameObject deadPlayer;
 	public GameObject Glitcher;
+	public GameObject fartBot;
 	public float moveSpeed = 4f;
 	string state = "Movement";
 	float gravity = 0f;
@@ -38,6 +39,9 @@ public class playerController : MonoBehaviour {
 		if (state == "Jump") {
 			Jump ();
 			Movement ();
+		}
+		if (Input.GetKeyDown (KeyCode.R)) {
+			Instantiate (fartBot, this.transform.position, this.transform.rotation, null);
 		}
 	}
 	void Movement()

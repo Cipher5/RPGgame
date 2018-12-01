@@ -13,13 +13,13 @@ public class axeDamage : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider collider)
 	{
-		GameObject other = collision.gameObject;
+		GameObject other = collider.gameObject;
 		Health otherHealth = other.GetComponent<Health> ();
 
 		if (otherHealth) {
-			otherHealth.TakeDamage (2f);
+			otherHealth.TakeDamage (1f);
 		}
 	}
 }
