@@ -18,7 +18,6 @@ public class axeDamage : MonoBehaviour {
 		GameObject other = collision.gameObject;
 		Health otherHealth = other.GetComponent<Health> ();
 
-		//        Destroy(gameObject);
 		if (otherHealth) {
 			otherHealth.TakeDamage (2f);
 		}
