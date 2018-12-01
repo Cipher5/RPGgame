@@ -19,13 +19,19 @@ public class Health : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.H)) {
-			health.TakeDamage (1f);
+			health.TakeDamage (1323f);
 		}
 	}
 	public void TakeDamage(float amount) {
 		currentHealth -= amount;
 
 		healthbar.value = currentHealth / maxHealth;
+
+		if (currentHealth <= 0) {
+			Debug.Log ("ded");
+			SendMessage ("onDeath");
+		}
+
 		Animator anim = this.GetComponent<Animator> ();
 		if (anim) {
 			playerController pc;

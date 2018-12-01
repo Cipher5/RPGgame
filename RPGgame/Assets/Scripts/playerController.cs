@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour {
 	CharacterController cc;
 	Animator anim;
 	Camera cam;
+	public GameObject deadPlayer;
 	public float moveSpeed = 4f;
 	string state = "Movement";
 	float gravity = 0f;
@@ -14,12 +15,16 @@ public class playerController : MonoBehaviour {
 	public float jumpHeight = 16f;
 	Health myHealth;
 
+
 	// Use this for initialization
 	void Start () {
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator> ();
 		myHealth = GetComponent<Health> ();
 		cam = Camera.main;
+		this.gameObject.SetActive (true);
+		//resetPosition = transform.position;
+
 	}
 	
 	// Update is called once per frame
@@ -88,6 +93,11 @@ public class playerController : MonoBehaviour {
 		ChangeState ("Movement");
 	}
 
+	void onDeath() {
+		Debug.Log ("Dead");
+		Instantiate (deadPlayer, this.transform.position, this.transform.rotation, null);
+		this.gameObject.SetActive (false);
+	}
 
 	void Swing()
 	{
@@ -101,4 +111,8 @@ public class playerController : MonoBehaviour {
 			myHealth.TakeDamage (2f);
 		}
 	}
+	void ReturnToCheckpoint() {
+		//resetPosition ();
+	}
+
 }

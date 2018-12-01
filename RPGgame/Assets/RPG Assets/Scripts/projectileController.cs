@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class projectileController : MonoBehaviour {
 
+	public float damage = 1f;
+
     void Start()
     {
         Destroy(gameObject, 5f);
@@ -16,8 +18,9 @@ public class projectileController : MonoBehaviour {
 
 //        Destroy(gameObject);
 		if (otherHealth) {
-			otherHealth.TakeDamage (2f);
-			Destroy (gameObject);
+			otherHealth.TakeDamage (damage);
+
 		}
+		Destroy (gameObject);
     }
 }
