@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour {
 	CharacterController cc;
 	Animator anim;
 	Camera cam;
+	public GameObject HitDetector;
 	public GameObject deadPlayer;
 	public GameObject Glitcher;
 	public GameObject fartBot;
@@ -96,6 +97,7 @@ public class playerController : MonoBehaviour {
 	void ReturnToMovement()
 	{
 		ChangeState ("Movement");
+		HitDetector.gameObject.SetActive (false);
 	}
 
 	void onDeath() {
@@ -109,6 +111,7 @@ public class playerController : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonDown (0)) {
 			ChangeState ("Swing");
+			HitDetector.gameObject.SetActive (true);
 		}
 	}
 	void onCollisionEnter(Collider other) {
