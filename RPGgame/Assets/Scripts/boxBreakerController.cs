@@ -15,9 +15,18 @@ public class boxBreakerController : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnTriggerExit(Collider other)
+	void OnTriggerExit (Collider other)
+
 	{
+
 		if (other.gameObject.tag == "hitDetector") {
+			if (boxBroken == false) {
+				Destroy (this.gameObject);
+				boxBroken = true;
+				Instantiate (BrokenBox, this.transform.position, this.transform.rotation, null);
+			}
+		}
+		if (other.gameObject.tag == "instaDeath") {
 			if (boxBroken == false) {
 				Destroy (this.gameObject);
 				boxBroken = true;

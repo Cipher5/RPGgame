@@ -103,7 +103,7 @@ public class playerController : MonoBehaviour {
 	void onDeath() {
 		Debug.Log ("Dead");
 		Instantiate (deadPlayer, this.transform.position, this.transform.rotation, null);
-		Instantiate (Glitcher, this.transform.position, this.transform.rotation, null);
+//		Instantiate (Glitcher, this.transform.position, this.transform.rotation, null);
 		this.gameObject.SetActive (false);
 	}
 
@@ -114,10 +114,16 @@ public class playerController : MonoBehaviour {
 			HitDetector.gameObject.SetActive (true);
 		}
 	}
-	void onCollisionEnter(Collider other) {
+	void onTriggerEnter(Collider other) {
 		Debug.Log (other.gameObject.tag);
 		if (other.gameObject.tag == "hazardWeapon") {
 			myHealth.TakeDamage (2f);
+		}
+		if (other.gameObject.tag == "instaDeath") {
+			myHealth.TakeDamage (100f);
+		}
+		if (other.gameObject.tag == "BallDropTrigger") {
+			myHealth.TakeDamage (100f);
 		}
 	}
 	void ReturnToCheckpoint() {

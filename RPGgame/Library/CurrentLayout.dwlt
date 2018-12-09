@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 495}
   m_MaxSize: {x: 18008, y: 14045}
   vertical: 0
-  controlID: 22471
+  controlID: 27713
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 495}
   m_MaxSize: {x: 10002, y: 14045}
   vertical: 1
-  controlID: 22472
+  controlID: 27714
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 342}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 22566
+  controlID: 27807
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -418,14 +418,14 @@ MonoBehaviour:
     width: 1091
     height: 441
   m_SceneLighting: 1
-  lastFramingTime: 2451.40179002285
+  lastFramingTime: 5287.66279900074
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 14.786684, y: 30.92853, z: 28.01675}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 14.786684, y: 30.92853, z: 28.01675}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -448,13 +448,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.08072739, y: 0.8141481, z: -0.07941036, w: -0.5695085}
+    m_Target: {x: -0.24067487, y: 0.22905718, z: -0.036741983, w: -0.94247466}
     speed: 2
-    m_Value: {x: -0.08072739, y: 0.8141481, z: -0.07941036, w: -0.5695085}
+    m_Value: {x: -0.24067487, y: 0.22905718, z: -0.036741983, w: -0.94247466}
   m_Size:
-    m_Target: 2.0271094
+    m_Target: 22
     speed: 2
-    m_Value: 2.0271094
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -557,19 +557,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/RPG Assets/Models
+    - Assets/Prefabs
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 96
   m_LastFolders:
-  - Assets/RPG Assets/Models
-  m_LastFoldersGridSize: -1
+  - Assets/Prefabs
+  m_LastFoldersGridSize: 96
   m_LastProjectPath: /Users/mvcoder/Documents/GitHub/RPGgame/RPGgame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c260000
-    m_LastClickedID: 9740
-    m_ExpandedIDs: 00000000b42400000c2600003a2600005a2600007e35000000ca9a3bffffff7f
+    m_SelectedIDs: 20250000
+    m_LastClickedID: 9504
+    m_ExpandedIDs: 00000000b42400001226000040260000883500008a370000f2370000f83700001a380000223800003e3800008838000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -597,7 +597,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b42400000c2600003a2600005a2600007e35000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000b42400001226000040260000883500008a370000f2370000f83700001a380000223800003e3800008838000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,8 +650,8 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
-  m_DirectoriesAreaWidth: 110
+    m_GridSize: 96
+  m_DirectoriesAreaWidth: 189
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -680,9 +680,9 @@ MonoBehaviour:
     height: 586
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b2faffff
-    m_LastClickedID: -1358
-    m_ExpandedIDs: 8a5bfdffdcf6fffff2f6ffff00f7ffff14f7ffffeaf7ffffecf7ffff00f8ffff18f8ffff1cf8ffff24f8ffffe2fbffff00000000002a0000862d0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: acd1f9ffb4d1f9ffb8d1f9ffc6d1f9ffd8d1f9ffdad1f9ff48d5f9ff881bfaffc0b9faffc0b6fdff1ac0fdff9c7cfeff40a0ffff42a0ffffdef6ffffe0f6fffff4f6ffff0af7ffff0ef7ffff16f7ffffa6faffffe2fbffff00000000b82e000032300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

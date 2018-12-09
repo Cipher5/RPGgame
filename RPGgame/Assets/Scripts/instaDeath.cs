@@ -1,0 +1,25 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class instaDeath : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+	void OnTriggerEnter(Collider collider)
+	{
+		GameObject other = collider.gameObject;
+		Health otherHealth = other.GetComponent<Health> ();
+
+		if (otherHealth) {
+			otherHealth.TakeDamage (100f);
+		}
+	}
+}
