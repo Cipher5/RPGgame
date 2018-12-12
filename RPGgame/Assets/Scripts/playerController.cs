@@ -122,9 +122,7 @@ public class playerController : MonoBehaviour {
 		if (other.gameObject.tag == "instaDeath") {
 			myHealth.TakeDamage (100f);
 		}
-		if (other.gameObject.tag == "BallDropTrigger") {
-			myHealth.TakeDamage (100f);
-		}
+
 	}
 	void ReturnToCheckpoint() {
 		//resetPosition ();
