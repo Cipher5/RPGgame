@@ -122,6 +122,9 @@ public class playerController : MonoBehaviour {
 		if (other.gameObject.tag == "instaDeath") {
 			myHealth.TakeDamage (100f);
 		}
+		if (other.gameObject.tag == "healingStation") {
+			Debug.Log ("Plat");
+		}
 
 	}
 	void ReturnToCheckpoint() {

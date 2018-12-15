@@ -19,7 +19,7 @@ public class Health : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.H)) {
-			health.TakeDamage (1323f);
+			health.TakeDamage (9f);
 		}
 	}
 	public void TakeDamage(float amount) {
@@ -42,6 +42,13 @@ public class Health : MonoBehaviour {
 		}
 
 	}
+
+	public void giveHealth(float amount) {
+		currentHealth += amount;
+
+		healthbar.value = currentHealth / maxHealth;
+	}
+
 
 	void ReturnToMovement() {
 		 //("Movement");
