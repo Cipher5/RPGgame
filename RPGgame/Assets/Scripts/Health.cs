@@ -42,13 +42,7 @@ public class Health : MonoBehaviour {
 		}
 
 	}
-
-	public void giveHealth(float amount) {
-		currentHealth += amount;
-
-		healthbar.value = currentHealth / maxHealth;
-	}
-
+		
 
 	void ReturnToMovement() {
 		 //("Movement");
