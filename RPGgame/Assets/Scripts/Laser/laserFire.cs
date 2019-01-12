@@ -13,7 +13,7 @@ public class laserFire : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void laserTriggered(){
+	void laserTriggered(){
 		Debug.Log ("ded");
 	}
 }

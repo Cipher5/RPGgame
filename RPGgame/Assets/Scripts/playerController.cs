@@ -11,6 +11,7 @@ public class playerController : MonoBehaviour {
 	public GameObject deadPlayer;
 	public GameObject Glitcher;
 	public GameObject fartBot;
+	public GameObject beamSword;
 	public float moveSpeed = 4f;
 	string state = "Movement";
 	float gravity = 0f;
@@ -103,6 +104,7 @@ public class playerController : MonoBehaviour {
 	void onDeath() {
 		Debug.Log ("Dead");
 		Instantiate (deadPlayer, this.transform.position, this.transform.rotation, null);
+		Instantiate (beamSword, this.transform.position, this.transform.rotation, null);
 //		Instantiate (Glitcher, this.transform.position, this.transform.rotation, null);
 		this.gameObject.SetActive (false);
 	}
